@@ -11,7 +11,7 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
 
 
   <!--Ejercicio3-->
-<img src='españa.jpg'>
+<img src='./assets/espana.jpg'>
 
 
 
