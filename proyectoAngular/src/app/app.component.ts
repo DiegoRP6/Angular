@@ -11,8 +11,8 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
 
 
   <!--Ejercicio3-->
-<img src='./assets/espana.jpg'>
-
+<img src='./assets/espana.jpg' width=300 *ngIf='visible'>
+<button (click)="mostrarEspana()">España</button>
 
 
 <!--Ejercicio2-->
@@ -40,6 +40,10 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
   
 })
 export class AppComponent {
+  visible: boolean = true;
+  mostrarEspana(){
+    this.visible = !this.visible;
+  }
 
   aplicarClases = "italica negrita";
   aplicarNegrita: boolean = false;

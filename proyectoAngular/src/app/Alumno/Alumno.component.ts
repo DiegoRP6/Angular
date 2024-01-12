@@ -14,4 +14,10 @@ export class AlumnoComponent {
     direccion: string = "Calle de la piruleta, 69";
     edad: number = 20;
     columnas: number = 2;
+
+    visibles: boolean = false;
+
+    alternarVisibilidad(){
+        this.visibles = !this.visibles;
+    }
 }
