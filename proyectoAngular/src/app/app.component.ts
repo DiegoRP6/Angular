@@ -10,19 +10,24 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
   template: `
 
 
-//Ejercicio2
+  <!--Ejercicio3-->
+<img src='españa.jpg'>
 
+
+
+<!--Ejercicio2-->
+<!--
 <button class="{{aplicarClases}}">Botón 1</button>
 <br><br>
 <button class="color italica negrita" [class.negrita]='aplicarNegrita'>Botón 2</button>
 <br><br>
 <button [ngClass]= 'addClases()'>Botón 3</button> 
 
+-->
 
 
 
-
-//Ejercicio1
+<!--Ejercicio1-->
 <!--
   <div>
     <h1>{{ encabezado ? getNombreCompleto() : (1+2) }}</h1>
