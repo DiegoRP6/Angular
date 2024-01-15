@@ -1,7 +1,8 @@
+
 <table>
     <thead>
         <tr>
-            <th colspan='2'>
+            <th [attr.colspan]="columnas"> 
                 Ciclista
             </th>
         </tr>
@@ -15,13 +16,17 @@
             <td>Apellidos:</td>
             <td>{{apellidos}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="visibles">
             <td>Direccion:</td>
             <td>{{direccion}}</td>
         </tr>
-        <tr>
+        <tr *ngIf="visibles">
             <td>Edad:</td>
             <td>{{edad}}</td>
         </tr>
-        </tbody>
+        
+
+    </tbody>
 </table>
+
+<button (click)="alternarVisibilidad()">{{visibles? "Ocultar" : "Mostrar"}}Detalles</button>

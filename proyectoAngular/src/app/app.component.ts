@@ -13,6 +13,7 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
   <!--Ejercicio3-->
 <img src='./assets/espana.jpg' width=300 *ngIf='visible'>
 <button (click)="mostrarEspana()">España</button>
+<elAlumno></elAlumno>
 
 
 <!--Ejercicio2-->
