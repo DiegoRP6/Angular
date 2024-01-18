@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AlumnoComponent } from './Alumno/Alumno.component';
+import { AlumnoListaComponent } from './Alumno/AlumnoLista.component';
 
 @Component({
   selector: 'app-root', /*esto es lo que conecta con el index.html*/
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AlumnoComponent],
+  imports: [CommonModule, RouterOutlet, AlumnoComponent, AlumnoListaComponent],
   template: `
 
 
@@ -14,6 +15,8 @@ import { AlumnoComponent } from './Alumno/Alumno.component';
 <img src='./assets/espana.jpg' width=300 *ngIf='visible'>
 <button (click)="mostrarEspana()">España</button>
 <elAlumno></elAlumno>
+<br><br>
+<listaAlumno></listaAlumno>
 
 
 <!--Ejercicio2-->

@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>F.Nac</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let alumno of alumnos">
+            <td>{{alumno.nombre | uppercase | AlumnoTitulo:alumno.sexo}}</td> <!--Aplicas lo de la derecha a la izquierda-->
+            <td>{{alumno.apellidos | uppercase}}</td>
+            <td>{{alumno.direccion}}</td>
+            <td>{{alumno.fnac | date:'dd/MMM/y'}}</td>
+            <td>{{alumno.sexo}}</td>
+        </tr>
+    </tbody>
+</table>
