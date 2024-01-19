@@ -1,8 +1,13 @@
+<cuantosAlumnos      
+[todos]="getNumTodos()"
+[hombres]="getNumHombres()"
+[mujeres]="getNumMujeres()">>
+</cuantosAlumnos>
+
 <table class="table table-striped">
     <thead>
         <tr>
             <th>Nombre</th>
-            <th>Apellido</th>
             <th>Direccion</th>
             <th>F.Nac</th>
             <th>Sexo</th>
@@ -10,11 +15,13 @@
     </thead>
     <tbody>
         <tr *ngFor="let alumno of alumnos">
-            <td>{{alumno.nombre | uppercase | AlumnoTitulo:alumno.sexo}}</td> <!--Aplicas lo de la derecha a la izquierda-->
-            <td>{{alumno.apellidos | uppercase}}</td>
+            <td>{{alumno.nombre | uppercase |AlumnoTitulo:alumno.sexo}} {{alumno.apellidos |uppercase}}</td>
             <td>{{alumno.direccion}}</td>
-            <td>{{alumno.fnac | date:'dd/MMM/y'}}</td>
+            <td>{{alumno.fnac | date: 'dd/MM/yyyy'}}</td>
             <td>{{alumno.sexo}}</td>
+        </tr> 
+        <tr>
+            <td colspan="5" *ngIf="alumnos.length == 0">No hay alumnos</td>
         </tr>
     </tbody>
 </table>

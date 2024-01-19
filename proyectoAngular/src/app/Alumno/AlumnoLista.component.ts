@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {AlumnoTituloPipe} from './AlumnoTitulo.pipe';
+import { AlumnoTituloPipe } from './AlumnoTitulo.pipe';
+import { AlumnosCountComponent } from './AlumnosCount.component';
 
 @Component({
-    selector: 'listaAlumno',
-    standalone: true,
-    imports: [CommonModule, RouterOutlet, AlumnoTituloPipe],
-    templateUrl: './AlumnoLista.component.html',  
-    styleUrl: './Alumno.component.css'
+  selector: 'listaAlumnos',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, AlumnoTituloPipe, AlumnosCountComponent],
+  templateUrl: './AlumnoLista.component.html',  
+  styleUrl: './Alumno.component.css'
 })
+
 
 // Define la clase del componente
 export class AlumnoListaComponent {
@@ -57,5 +59,17 @@ export class AlumnoListaComponent {
             sexo: 'Hombre'
         }
     ];
+
+    getNumTodos(): number{
+        return this.alumnos.length;
+    }
+
+    getNumHombres(): number{
+        return this.alumnos.filter(a => a.sexo == 'Hombre').length;
+    }
+
+    getNumMujeres(): number{
+        return this.alumnos.filter(a => a.sexo == 'Mujer').length;
+    }
 
 }

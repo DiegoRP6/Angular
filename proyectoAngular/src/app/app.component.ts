@@ -10,13 +10,17 @@ import { AlumnoListaComponent } from './Alumno/AlumnoLista.component';
   imports: [CommonModule, RouterOutlet, AlumnoComponent, AlumnoListaComponent],
   template: `
 
+<!--Ejercicio4-->
+<listaAlumnos></listaAlumnos>
 
   <!--Ejercicio3-->
+  <!--
 <img src='./assets/espana.jpg' width=300 *ngIf='visible'>
 <button (click)="mostrarEspana()">España</button>
 <elAlumno></elAlumno>
 <br><br>
-<listaAlumno></listaAlumno>
+<listaAlumnos></listaAlumnos>
+-->
 
 
 <!--Ejercicio2-->
