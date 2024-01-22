@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
 import { get } from "http";
@@ -12,6 +12,11 @@ import { get } from "http";
     })
 
 export class AlumnosCountComponent {
+    opcionElegida: string = "Todos";
+
+    @Output()
+    globalElegido: EventEmitter<string> = new EventEmitter<string>(); 
+
     @Input()
     todos: number = 0;
 
