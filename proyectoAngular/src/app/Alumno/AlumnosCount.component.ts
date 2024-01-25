@@ -1,18 +1,17 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterOutlet } from "@angular/router";
-import { get } from "http";
-
+import { FormsModule } from "@angular/forms";
 @Component({
     selector: "cuantosAlumnos",
     standalone: true,
-    imports: [CommonModule, RouterOutlet],
+    imports: [CommonModule, RouterOutlet, FormsModule],
     templateUrl: "./AlumnosCount.component.html",
     styleUrls: ["./AlumnoCount.component.css"]
     })
 
 export class AlumnosCountComponent {
-    opcionElegida: string = "Todos";
+    opcionElegida: string = "Mujeres";
 
     @Output()
     globalElegido: EventEmitter<string> = new EventEmitter<string>(); 
@@ -25,4 +24,8 @@ export class AlumnosCountComponent {
 
     @Input()
     mujeres: number = 0;
+
+    cuandoCambiemos() {
+        this.globalElegido.emit(this.opcionElegida);
+    }
 }

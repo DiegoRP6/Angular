@@ -15,6 +15,13 @@ import { AlumnosCountComponent } from './AlumnosCount.component';
 
 // Define la clase del componente
 export class AlumnoListaComponent {
+    seleccion: string = 'Mujer';
+
+    //Metodo que se ejecuta cuando se cambia la opcion seleccionada
+    alCambiar(opcionSeleccionada: string) {
+        this.seleccion = opcionSeleccionada;
+    }
+
     alumnos: any[] = [
         {
             nombre: 'Perico',

@@ -1,7 +1,8 @@
 <cuantosAlumnos      
 [todos]="getNumTodos()"
 [hombres]="getNumHombres()"
-[mujeres]="getNumMujeres()">>
+[mujeres]="getNumMujeres()"
+(globalElegido)="alCambiar($event)">
 </cuantosAlumnos>
 
 <table class="table table-striped">
@@ -14,14 +15,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let alumno of alumnos">
-            <td>{{alumno.nombre | uppercase |AlumnoTitulo:alumno.sexo}} {{alumno.apellidos |uppercase}}</td>
-            <td>{{alumno.direccion}}</td>
-            <td>{{alumno.fnac | date: 'dd/MM/yyyy'}}</td>
-            <td>{{alumno.sexo}}</td>
-        </tr> 
-        <tr>
-            <td colspan="5" *ngIf="alumnos.length == 0">No hay alumnos</td>
+        <ng-container *ngFor="let alumno of alumnos">
+            <tr *ngIf="seleccion == 'Todos' || seleccion == alumno.sexo">
+                <td>{{ alumno.nombre | uppercase | AlumnoTitulo:alumno.sexo }} {{ alumno.apellidos | uppercase }}</td>
+                <td>{{ alumno.direccion }}</td>
+                <td>{{ alumno.fnac | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ alumno.sexo }}</td>
+            </tr>
+        </ng-container>
+          <tr *ngIf="alumnos.length === 0">
+            <td colspan="4">No hay alumnos</td>
         </tr>
     </tbody>
 </table>
