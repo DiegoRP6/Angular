@@ -9,9 +9,24 @@ import { AlumnoListaComponent } from './Alumno/AlumnoLista.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, AlumnoComponent, AlumnoListaComponent],
   template: `
+  <!--Ejercicio5 -->
+  <div style="padding: 10px">
+  //tabla con bootstrap
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="Alumnos">Alumnos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Profesores">Profesores</a>
+      </li>
 
+    </ul>
+
+  </div>
 <!--Ejercicio4-->
+<!--
 <listaAlumnos></listaAlumnos>
+-->
 
   <!--Ejercicio3-->
   <!--

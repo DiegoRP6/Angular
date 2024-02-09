@@ -1,71 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AlumnoTituloPipe } from './AlumnoTitulo.pipe';
 import { AlumnosCountComponent } from './AlumnosCount.component';
+import {IAlumno, Alumno} from './Alumno';
+import {AlumnosService} from './AlumnosService';
 
 @Component({
   selector: 'listaAlumnos',
   standalone: true,
   imports: [CommonModule, RouterOutlet, AlumnoTituloPipe, AlumnosCountComponent],
+  providers: [AlumnosService],
   templateUrl: './AlumnoLista.component.html',  
   styleUrl: './Alumno.component.css'
 })
 
 
 // Define la clase del componente
-export class AlumnoListaComponent {
+export class AlumnoListaComponent implements OnInit{
     seleccion: string = 'Mujer';
+    alumnos: Alumno[];
+
+    constructor(public losAlumnos: AlumnosService){
+    }
+
+    //metodo subscribe
+    ngOnInit : void(){
+        this.alumnos = this.losAlumnos.getAlumnos();
+    }
 
     //Metodo que se ejecuta cuando se cambia la opcion seleccionada
     alCambiar(opcionSeleccionada: string) {
         this.seleccion = opcionSeleccionada;
     }
 
-    alumnos: any[] = [
-        {
-            nombre: 'Perico',
-            apellidos: 'Delgado',
-            direccion: 'Madrid',
-            fnac: '02/02/1990',
-            sexo: 'Hombre'
-        },
-        {
-            nombre: 'Juan',
-            apellidos: 'Perez',
-            direccion: 'Madrid',
-            fnac: '03/02/1992',
-            sexo: 'Hombre'
-        },
-        {
-            nombre: 'Maria',
-            apellidos: 'Gomez',
-            direccion: 'Madrid',
-            fnac: '12/12/1995',
-            sexo: 'Mujer'
-        },
-        {
-            nombre: 'Ana',
-            apellidos: 'Lopez',
-            direccion: 'Madrid',
-            fnac: '11/05/1998',
-            sexo: 'Mujer'
-        },
-        {
-            nombre: 'Pedro',
-            apellidos: 'Garcia',
-            direccion: 'Madrid',
-            fnac: '01/01/1999',
-            sexo: 'Hombre'
-        },
-        {
-            nombre: 'Luis',
-            apellidos: 'Sanchez',
-            direccion: 'Madrid',
-            fnac: '02/02/1990',
-            sexo: 'Hombre'
-        }
-    ];
+    constructor(public losAlumnos: AlumnosService){
+    }
+
+    ngOnInit(){
+        this.alumnos = this.losAlumnos.getAlumnos();
+    }
+
 
     getNumTodos(): number{
         return this.alumnos.length;
