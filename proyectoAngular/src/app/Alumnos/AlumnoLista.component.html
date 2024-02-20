@@ -1,0 +1,30 @@
+<cuantos-alumno [todos]="getNumTodos()"
+                [hombres]="getNumHombres()"
+                [mujeres]="getNumMujeres()"
+                (opcionElegidaChange)="alCambiar($event)">
+</cuantos-alumno>
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>F.Nacimineto</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--el ngFor es como un foreach-->
+        <ng-container *ngFor="let alumno of alumnos">
+            <tr *ngIf="seleccion == 'Todos' || seleccion == alumno.sexo ">
+                <td><a [routerLink]= "['/Alumnos', alumno.id]" routerLink="router-link-active">{{alumno.nombre | uppercase |alumnoTitulo:alumno.sexo}} {{alumno.apellidos |uppercase}}</a></td>
+                <td>{{alumno.direccion}}</td>
+                <td>{{alumno.fnac | date: 'dd/MM/yyyy'}}</td>
+                <td>{{alumno.sexo}}</td>
+            </tr> 
+        </ng-container>
+
+        <tr *ngIf="alumnos.length == 0">
+            <td colspan="4">No hay alumnos</td>
+        </tr>  
+    </tbody>
+</table>

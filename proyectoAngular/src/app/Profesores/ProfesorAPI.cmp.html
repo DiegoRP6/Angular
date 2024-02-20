@@ -1,0 +1,22 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre y Apellidos</th>
+            <th>Materia</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--el ngFor es como un foreach-->
+        <ng-container *ngFor="let profex of profes">
+            <tr>
+                <td>{{profex.nombre | uppercase}} {{profex.apellidos |uppercase}}</td>
+                <td>{{profex.materia}}</td>
+            </tr> 
+        </ng-container>
+
+        <tr *ngIf="profes.length == 0">
+            <td colspan="4">No hay Profesores</td>
+        </tr>  
+    </tbody>
+</table>

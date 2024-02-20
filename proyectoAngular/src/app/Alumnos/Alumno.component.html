@@ -1,0 +1,30 @@
+<table>
+    <thead>
+
+    </thead>
+    <tbody>
+         <tr>
+            <td>Nombre</td>
+            <td>{{alumno.nombre}}</td>
+        </tr>
+        <tr>
+            <td>Apellidos</td>
+            <td>{{alumno.apellidos}}</td>
+        </tr>
+        <tr *ngIf="visibles">
+            <td>Direccion</td>
+            <td>{{alumno.direccion}}</td>
+        <tr *ngIf="visibles">
+            <td>Edad</td>
+            <td>{{alumno.fnac}}</td>   
+        </tr>   
+        <tr>
+            <td>Sexo</td>
+            <td>{{alumno.sexo}}</td>
+        </tr>
+    </tbody>
+
+
+</table>
+<br>
+<button (click)="alternarVisibilidad()">{{visibles ? "Ocultar" : "Mostrar"}} Detalles</button>

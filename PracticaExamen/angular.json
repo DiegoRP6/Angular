@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "proyectoAngular": {
+    "PracticaExamen": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/proyecto-angular",
+            "outputPath": "dist/practica-examen",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,13 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/scss/bootstrap.scss"
+              "src/styles.css"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-            "node_modules/jquery/dist/jquery.min.js"
-
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -66,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "proyectoAngular:build:production"
+              "buildTarget": "PracticaExamen:build:production"
             },
             "development": {
-              "buildTarget": "proyectoAngular:build:development"
+              "buildTarget": "PracticaExamen:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "proyectoAngular:build"
+            "buildTarget": "PracticaExamen:build"
           }
         },
         "test": {
@@ -100,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3ddb2a11-88a7-4023-bd63-850641e474e1"
   }
 }
