@@ -1,6 +1,15 @@
 <h1>LISTA CURSOS</h1>
-<ul>
-    <li *ngFor="let curso of cursos">
-      {{ curso.Ano }} - {{ curso.ID }} - {{ curso.Letra }}
-    </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Año - Letra</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let curso of cursos">
+      <td><a [routerLink]="['/Curso', curso.ID]">{{ curso.Ano }} - {{ curso.Letra }}</a></td>
+      <td>{{ curso.ID }}</td>
+    </tr>
+  </tbody>
+</table>

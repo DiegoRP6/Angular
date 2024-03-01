@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { IAlumno, Alumno } from './Alumno';
 import { AlumnosService } from './AlumnosService';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'lista-alumnos',
     standalone: true,
-    imports: [CommonModule, RouterOutlet],
+    imports: [CommonModule, RouterOutlet, RouterModule],
     providers: [AlumnosService],
     templateUrl: './AlumnoLista.component.html'
 })

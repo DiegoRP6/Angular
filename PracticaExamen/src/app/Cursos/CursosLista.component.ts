@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { CursoService } from './CursosService';
+import { CursosService } from './CursosService';
 import { Curso } from './Curso';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'lista-cursos',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet, RouterModule],
+  providers: [CursosService],
   templateUrl: './CursoLista.component.html',
   standalone: true
 })
 export class CursosListaComponent implements OnInit {
   cursos: Curso[] = [];
 
-  constructor(private cursoService: CursoService) { }
+  constructor(private cursosService: CursosService) {}
 
   ngOnInit(): void {
-    this.getCursos();
-  }
-
-  getCursos(): void {
-    this.cursoService.getCursos()
-      .subscribe(cursos => this.cursos = cursos);
+    this.cursosService.getCursos().subscribe((cursos: Curso[]) => { // Especifica el tipo de cursos
+      this.cursos = cursos;
+    });
   }
 }

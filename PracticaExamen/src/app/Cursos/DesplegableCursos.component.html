@@ -1,0 +1,4 @@
+<label for="selectCurso">Selecciona un curso:</label>
+<select id="selectCurso" [(ngModel)]="cursoSeleccionadoId" (change)="onCursoSelect()">
+  <option *ngFor="let curso of cursos" [value]="curso.ID">{{ curso.Ano }}{{ curso.Letra }}</option>
+</select>

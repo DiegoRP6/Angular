@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor="let alumno of alumnos">
       <td>{{ alumno.ID }}</td>
-      <td>{{ alumno.Nombre }}</td>
+      <td><a [routerLink]="['/Alumno', alumno.ID]">{{ alumno.Nombre }}</a></td>
       <td>{{ alumno.Apellidos }}</td>
       <td>{{ alumno.Sexo }}</td>
       <td>{{ alumno.FNac }}</td>

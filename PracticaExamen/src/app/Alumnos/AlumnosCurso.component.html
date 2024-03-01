@@ -1,0 +1,33 @@
+<div>
+    <desplegable-cursos (cursoSeleccionado)="handleCursoSeleccionado($event)"></desplegable-cursos>
+</div>
+  
+  <div *ngIf="alumnos.length > 0">
+    <h2>Alumnos del curso seleccionado:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Direccion</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Sexo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{ alumno.ID }}</td>
+          <td>{{ alumno.Nombre }}</td>
+          <td>{{ alumno.Apellidos }}</td>
+          <td>{{ alumno.Direccion }}</td>
+          <td>{{ alumno.FNac }}</td>
+          <td>{{ alumno.Sexo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="alumnos.length === 0">
+    <p>No hay alumnos en este curso.</p>
+  </div>
