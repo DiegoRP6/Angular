@@ -1,0 +1,15 @@
+<h1>LISTA DE SERIES</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let serie of Series">
+      <td>{{ serie.ID }}</td>
+      <td><a [routerLink]="['/Vehiculo', serie.ID]">{{serie.Nombre}}</a></td>
+    </tr>
+  </tbody>
+</table>

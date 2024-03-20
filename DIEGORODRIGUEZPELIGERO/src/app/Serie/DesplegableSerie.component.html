@@ -1,0 +1,6 @@
+<label for="selectSerie">Selecciona un Serie:</label>
+<select id="selectSerie" [(ngModel)]="SerieSeleccionadoId" (change)="AlSeleccionarSerie()">
+  <option *ngFor="let Serie of Series" [value]="Serie.ID">{{ Serie.Nombre }}</option>
+</select>
+
+<app-Vehiculos-lista></app-Vehiculos-lista>

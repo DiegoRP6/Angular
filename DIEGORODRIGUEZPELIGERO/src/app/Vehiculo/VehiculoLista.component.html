@@ -1,0 +1,26 @@
+  
+  <div>
+    <h2>Vehiculos de la serie seleccionada:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>MATRICULA</th>
+          <th>COLOR</th>
+          <th>SERIEID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of Vehiculos">
+          <td>{{ vehiculo.ID }}</td>
+          <td>{{ vehiculo.Matricula }}</td>
+          <td>{{ vehiculo.Color }}</td>
+          <td>{{ vehiculo.SerieID }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="Vehiculos.length === 0">
+    <p>No hay Vehiculos en esta serie.</p>
+  </div>
